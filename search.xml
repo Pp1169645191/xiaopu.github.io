@@ -12,6 +12,14 @@
       
       
       
+        <tags>
+            
+            <tag> Typora </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -50,7 +58,7 @@
       <link href="/xiaopu.github.io/2018/09/07/jieshao/"/>
       <url>/xiaopu.github.io/2018/09/07/jieshao/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>text: 1这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要1这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</p>]]></content>
       
       
       <categories>
