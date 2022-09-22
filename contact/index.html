@@ -435,7 +435,9 @@
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/xiaopu.github.io/libs/aplayer/APlayer.min.css">
+        
+
+<link rel="stylesheet" href="/xiaopu.github.io/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
         
@@ -462,28 +464,92 @@
     .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
         left: 0px !important;
     }
+    .aplayer-wrap {
+        width: 600px;
+        max-width: 100%;
+        margin: 20px auto 40px;
+    }
+    .aplayer .aplayer-pic .aplayer-pause{
+        width: 26px;
+        height: 26px;
+        border: 2px solid #fff;
+        bottom: 50%;
+        right: 50%;
+        margin: 0 -15px -15px 0;
+    }
+    .aplayer .aplayer-pic .aplayer-pause svg{
+        position: absolute;
+        top: 3px;
+        left: 4px;
+        height: 20px;
+        width: 20px;
+    }
+
 
     
 </style>
 <div class="">
     
     <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
+        <!--不可用
+        <div class="aplayer-wrap">
+             <div id="aplayer1" class="aplayer aplayer-withlrc aplayer-withlist">
+                <div class="body">
+                    <div class="aplayer-pic" style="background-image: url("https://cn-south-17-aplayer-46154810.oss.dogecdn.com/hikarunara.jpg"); background-color: rgb(235, 208, 194);">
+                        <div class="aplayer-button aplayer-play">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 31">
+                                <path d="M15.552 15.168q0.448 0.32 0.448 0.832 0 0.448-0.448 0.768l-13.696 8.512q-0.768 0.512-1.312 0.192t-0.544-1.28v-16.448q0-0.96 0.544-1.28t1.312 0.192z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="aplayer-info">   
+                            <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                                   server="netease"
+                                   type="playlist"
+                                   id="503838841"
+                                   fixed='true'
+                                   autoplay='false'
+                                   theme='#42b983'
+                                   loop='all'
+                                   order='random'
+                                   preload='auto'
+                                   volume='0.7'
+                                   list-folded='true'
+                            >
+                            </meting-js>
+                        <div class="aplayer-music"></div>  
+                        <div class="aplayer-title"></div>
+                        <div class="aplayer-author"></div>  
+                        <div class=""></div> 
+                    </div>
+                 </div>
+            </div>
+        </div>
+        -->
+        <div class="col s12 ">
+            <div id="aplayer" class="music"></div>
+        </div>
     </div>
 </div>
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+    $(function () {
+        new APlayer({
+            container: document.getElementById('aplayer'),
+            fixed: 'true' === 'true',
+            autoplay: 'false' === 'true',
+            theme: '#42b983',
+            loop: 'all',
+            order: 'random',
+            preload: 'auto',
+            volume: Number('0.7'),
+            listFolded: 'true' === 'true',
+            listMaxHeight: '',
+            audio: JSON.parse('[{"name":"雅俗共赏","artist":"许嵩","url":"http://music.163.com/song/media/outer/url?id=411214279.mp3","cover":"//p1.music.126.net/Wcs2dbukFx3TUWkRuxVCpw==/3431575794705764.jpg?param=90y90"},{"name":"孤勇者","artist":"陈奕迅","url":"http://music.163.com/song/media/outer/url?id=1901371647.mp3","cover":"//p1.music.126.net/aG5zqxkBRfLiV7A8W0iwgA==/109951166702962263.jpg?param=90y90"},{"name":"If I Let You Go","artist":"Westlife","url":"http://music.163.com/song/media/outer/url?id=27220254.mp3","cover":"https://p2.music.126.net/TcOOoZSbISGT9AkhUtwOsg==/5644892697128237.jpg?param=130y130"}]')
+        });
+    });
+</script>
 
 <script src="/xiaopu.github.io/libs/aplayer/APlayer.min.js"></script>
 <script src="/xiaopu.github.io/libs/aplayer/Meting.min.js"></script>
@@ -774,6 +840,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/xiaopu.github.io/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->
